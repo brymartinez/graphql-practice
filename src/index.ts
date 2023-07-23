@@ -1,12 +1,19 @@
-import { ApolloServer } from "@apollo/server";
-import { startStandaloneServer } from "@apollo/server/standalone";
-import { typeDefs } from "./models/typeDefs";
-import { resolvers } from "./resolvers/queries";
+import { ApolloServer } from '@apollo/server';
+import { startStandaloneServer } from '@apollo/server/standalone';
+import { typeDefs } from './graphql/typeDefs';
+import { resolvers } from './graphql/resolvers';
+import { initialize } from './datasource/datasource';
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const startServer = async () => {
+  const server = new ApolloServer({ typeDefs, resolvers });
 
-startStandaloneServer(server, {
-  listen: { port: 4000 },
-}).then(({ url }) => {
-  console.log(`Server ready at ${url}`);
-});
+  await initialize();
+
+  startStandaloneServer(server, {
+    listen: { port: 4000 },
+  }).then(async ({ url }) => {
+    console.log(`Server ready at ${url}`);
+  });
+};
+
+startServer();

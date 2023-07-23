@@ -1,11 +1,17 @@
-import { Column, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity()
-export class Actor {
+export class Actor extends BaseEntity {
   @PrimaryGeneratedColumn({ name: 'actor_id' })
   id: number;
 
-  @Column({ name: 'first_name'})
+  @Column({ name: 'first_name' })
   firstName: string;
 
   @Column({ name: 'last_name' })
