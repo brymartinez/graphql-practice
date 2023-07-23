@@ -11,7 +11,7 @@ export const actor = gql`
   type Query {
     actorsByFirstName(name: String!): [Actor]
     actorsByLastName(name: String!): [Actor]
-    actorById(id: ID!): Actor
+    getActor(id: ID!): Actor
     getActors: [Actor]
   }
 `;

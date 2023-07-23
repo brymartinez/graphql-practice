@@ -8,6 +8,6 @@ export const actorInfo = gql`
   }
 
   type Query {
-    actorInfoById(id: ID!): ActorInfo
+    getActorInfo(id: ID!): ActorInfo
   }
 `;

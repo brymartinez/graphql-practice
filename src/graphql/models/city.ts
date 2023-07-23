@@ -11,5 +11,6 @@ export const city = gql`
 
   type Query {
     getCity(id: Int!): City
+    getCities: [City]
   }
 `;
