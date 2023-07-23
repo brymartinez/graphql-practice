@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@apollo/server": "^4.7.5",
+    "dayjs": "^1.11.9",
     "graphql-tag": "^2.12.6",
     "pg": "^8.11.1",
     "typeorm": "^0.3.17"

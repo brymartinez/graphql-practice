@@ -9,7 +9,7 @@ const dataSource = new DataSource({
 
 export const initialize = async () => {
   if (!dataSource.isInitialized) {
-    dataSource.initialize();
+    await dataSource.initialize();
   }
 
   return dataSource;

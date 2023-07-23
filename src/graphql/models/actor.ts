@@ -2,9 +2,10 @@ import gql from 'graphql-tag';
 
 export const actor = gql`
   type Actor {
-    id: Int
-    firstName: String
-    lastName: String
+    id: Int!
+    firstName: String!
+    lastName: String!
+    updatedAt: Date!
   }
 
   type Query {
